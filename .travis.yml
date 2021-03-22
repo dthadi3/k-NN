@@ -1,7 +1,12 @@
 arch:
-  - amd64
+#  - amd64
   - ppc64le
 language: shell
 jdk: openjdk14
 script:
   - ./gradlew build
+before_script:
+  - |
+    if [[ "$TRAVIS_CPU_ARCH" = "ppc64le" ]]; then 
+     export JAVA_HOME=/usr/lib/jvm/adoptopenjdk-14-hotspot-ppc64el
+    fi
