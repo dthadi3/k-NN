@@ -1,0 +1,7 @@
+arch:
+  - amd64
+  - ppc64le
+language: shell
+jdk: openjdk11
+script:
+  - ./gradlew build
